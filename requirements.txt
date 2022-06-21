@@ -1,0 +1,8 @@
+aiogram=~2.3.0
+wikipedia
+asyncio
+uvicorn
+gunicorn
+
+
+
