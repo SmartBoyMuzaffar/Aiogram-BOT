@@ -173,10 +173,12 @@ from aiogram.dispatcher.filters import Command
 
 @m.message_handler(commands="echo", commands_prefix="/!.")
 async def echo_command(message: Message, command: Command.CommandObj):
-    if command.args:
+    if message.get_args() or command.args:
+        await message.answer(message.get_args())
         await message.answer(command.args)
+        print(command.args)
     else:
-        await message.answer("Введи текст в качестве аргумента команды, и я его повторю.")
+        await message.answer("Iltimos, commandadan keyin ma'lumot kiriting! \n(exp: /echo type anything).")
 
 
 
